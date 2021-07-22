@@ -1,3 +1,10 @@
 #!/usr/bin/env node
 
-console.log('Welcome Games!');
+import greetUser from '../src/cli.js';
+import checkEven from '../src/games/even.js';
+
+console.log('Welcome to the Brain Games!');
+
+greetUser();
+
+checkEven();
