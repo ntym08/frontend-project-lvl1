@@ -7,7 +7,7 @@ const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min)) + 
 
 const isEven = (number) => number % 2 === 0;
 
-const checkEven = () => {
+const checkEven = (userName) => {
   const ruleMessage = 'Answer "yes" if the number is even, otherwise answer "no".';
   console.log(ruleMessage);
   for (let i = 1; i < 4; i += 1) {
@@ -20,10 +20,10 @@ const checkEven = () => {
       console.log('Correct!');
     } else {
       console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${expectedAnswer}".`);
-      console.log("Let's try again, Bill!");
+      console.log(`Let's try again, ${userName}!`);
       break;
     }
-    if (i === 3) console.log('Congratulations, Bill!');
+    if (i === 3) console.log(`Congratulations, ${userName}!`);
   }
 };
 
