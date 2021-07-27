@@ -1,4 +1,4 @@
-import readlineSync from 'readline-sync';
+import processGame from '../index.js';
 
 const minNum = 1;
 const maxNum = 100;
@@ -7,24 +7,20 @@ const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min)) + 
 
 const isEven = (number) => number % 2 === 0;
 
-const checkEven = (userName) => {
-  const ruleMessage = 'Answer "yes" if the number is even, otherwise answer "no".';
-  console.log(ruleMessage);
-  for (let i = 1; i < 4; i += 1) {
-    const randomNum = getRandomNumber(minNum, maxNum);
-    const questionMessage = `Question: ${randomNum}`;
-    console.log(questionMessage);
-    const userAnswer = readlineSync.question('Your answer: ');
-    const expectedAnswer = isEven(randomNum) ? 'yes' : 'no';
-    if (userAnswer === expectedAnswer) {
-      console.log('Correct!');
-    } else {
-      console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${expectedAnswer}".`);
-      console.log(`Let's try again, ${userName}!`);
-      break;
-    }
-    if (i === 3) console.log(`Congratulations, ${userName}!`);
-  }
+export const getQuestion = () => {
+  const question = getRandomNumber(minNum, maxNum);
+  return `${question}`;
 };
 
-export default checkEven;
+export const checkEven = (num) => {
+  const expectedAnswer = isEven(num) ? 'yes' : 'no';
+  return expectedAnswer;
+};
+
+const descriptionMessage = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+const expression = getQuestion;
+const game = checkEven;
+
+export default () => {
+  processGame(descriptionMessage, expression, game);
+};
