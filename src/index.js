@@ -1,3 +1,4 @@
+// eslint-disable-next-line object-curly-newline
 import { getUserName, welcomeUser, greetUser, outputGameDescription, askQuestion, getUserAnswer, replyToWrongAnswer, replyToCorrectAnswer, outputCongrats } from './cli.js';
 
 const processGame = (description, expression, game) => {
