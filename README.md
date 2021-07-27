@@ -9,6 +9,8 @@
 ### Usage example:
 
 - brain-even
-  [![asciicast](https://asciinema.org/a/427354.svg)](https://asciinema.org/a/427354)
+  [![asciicast](https://asciinema.org/a/427385.svg)](https://asciinema.org/a/427385)
 - brain-calc
-  [![asciicast](https://asciinema.org/a/427355.svg)](https://asciinema.org/a/427355)
+  [![asciicast](https://asciinema.org/a/427389.svg)](https://asciinema.org/a/427389)
+- brain-gcd
+  [![asciicast](https://asciinema.org/a/427383.svg)](https://asciinema.org/a/427383)
