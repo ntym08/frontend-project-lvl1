@@ -12,9 +12,9 @@ export const getQuestion = () => {
   return `${question}`;
 };
 
-export const checkEven = (num) => {
-  const expectedAnswer = isEven(num) ? 'yes' : 'no';
-  return expectedAnswer;
+export const checkEven = (number) => {
+  const result = isEven(number) ? 'yes' : 'no';
+  return result;
 };
 
 const descriptionMessage = "Answer 'yes' if the number is even, otherwise answer 'no'.";

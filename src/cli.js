@@ -26,8 +26,8 @@ export const askQuestion = (expression) => {
   console.log(`Question: ${expression}`);
 };
 
-export const replyToWrongAnswer = (userAnswer, expectedAnswer, name) => {
-  console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${expectedAnswer}'.`);
+export const replyToWrongAnswer = (wrongAnswer, correctAnswer, name) => {
+  console.log(`'${wrongAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
   console.log(`Let's try again, ${name}!`);
 };
 
