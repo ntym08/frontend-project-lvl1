@@ -12,10 +12,7 @@ const getQuestion = () => {
   return `${question}`;
 };
 
-const checkEven = (number) => {
-  const result = isEven(number) ? 'yes' : 'no';
-  return result;
-};
+const checkEven = (number) => (isEven(number) ? 'yes' : 'no');
 
 const descriptionMessage = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 const expression = getQuestion;
