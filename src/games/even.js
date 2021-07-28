@@ -7,12 +7,12 @@ const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min)) + 
 
 const isEven = (number) => number % 2 === 0;
 
-export const getQuestion = () => {
+const getQuestion = () => {
   const question = getRandomNumber(minNum, maxNum);
   return `${question}`;
 };
 
-export const checkEven = (number) => {
+const checkEven = (number) => {
   const result = isEven(number) ? 'yes' : 'no';
   return result;
 };

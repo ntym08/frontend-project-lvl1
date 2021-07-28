@@ -29,6 +29,7 @@ const getGreatestCommonDivisor = (string) => {
 const descriptionMessage = 'Find the greatest common divisor of given numbers.';
 const expression = getQuestion;
 const game = getGreatestCommonDivisor;
+
 export default () => {
   processGame(descriptionMessage, expression, game);
 };
