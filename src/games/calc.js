@@ -1,20 +1,18 @@
-import processGame from '../index.js';
+import processGame, { getRandomInt } from '../index.js';
 
-const minNum = 1;
-const maxNum = 50;
+const minOperand = 1;
+const maxOperand = 50;
 const operators = ['+', '-', '*'];
 
-const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min)) + min;
-
-const getQuestion = () => {
-  const num1 = getRandomNumber(minNum, maxNum);
-  const num2 = getRandomNumber(minNum, maxNum);
-  const operator = operators[getRandomNumber(0, operators.length)];
-  const question = `${num1} ${operator} ${num2}`;
-  return question;
+const genExpression = () => {
+  const num1 = getRandomInt(minOperand, maxOperand);
+  const num2 = getRandomInt(minOperand, maxOperand);
+  const operator = operators[getRandomInt(0, operators.length)];
+  const expression = `${num1} ${operator} ${num2}`;
+  return expression;
 };
 
-const getCalc = (string) => {
+const calcExpression = (string) => {
   const array = string.split(' ');
   const num1 = Number(array[0]);
   const num2 = Number(array[2]);
@@ -36,10 +34,10 @@ const getCalc = (string) => {
   return String(result);
 };
 
-const descriptionMessage = 'What is the result of the expression?';
-const expression = getQuestion;
-const game = getCalc;
+const description = 'What is the result of the expression?';
+const genQuestion = genExpression;
+const getExpectedAnswer = calcExpression;
 
 export default () => {
-  processGame(descriptionMessage, expression, game);
+  processGame(description, genQuestion, getExpectedAnswer);
 };

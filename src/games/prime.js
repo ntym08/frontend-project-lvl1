@@ -1,9 +1,7 @@
-import processGame from '../index.js';
+import processGame, { getRandomInt } from '../index.js';
 
 const minNum = 1;
 const maxNum = 1000;
-
-const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 
 const isPrime = (number) => {
   if (number <= 1) {
@@ -17,17 +15,17 @@ const isPrime = (number) => {
   return true;
 };
 
-const getQuestion = () => {
-  const question = getRandomNumber(minNum, maxNum);
-  return `${question}`;
+const genInteger = () => {
+  const integer = getRandomInt(minNum, maxNum);
+  return `${integer}`;
 };
 
 const checkPrime = (number) => (isPrime(Number(number)) ? 'yes' : 'no');
 
-const descriptionMessage = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-const expression = getQuestion;
-const game = checkPrime;
+const description = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+const genQuestion = genInteger;
+const getExpectedAnswer = checkPrime;
 
 export default () => {
-  processGame(descriptionMessage, expression, game);
+  processGame(description, genQuestion, getExpectedAnswer);
 };

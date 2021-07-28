@@ -1,23 +1,21 @@
-import processGame from '../index.js';
+import processGame, { getRandomInt } from '../index.js';
 
 const minNum = 1;
 const maxNum = 100;
 
-const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min)) + min;
-
 const isEven = (number) => number % 2 === 0;
 
-const getQuestion = () => {
-  const question = getRandomNumber(minNum, maxNum);
-  return `${question}`;
+const genInteger = () => {
+  const integer = getRandomInt(minNum, maxNum);
+  return `${integer}`;
 };
 
-const checkEven = (number) => (isEven(number) ? 'yes' : 'no');
+const checkEven = (number) => (isEven(Number(number)) ? 'yes' : 'no');
 
-const descriptionMessage = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-const expression = getQuestion;
-const game = checkEven;
+const description = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+const genQuestion = genInteger;
+const getExpectedAnswer = checkEven;
 
 export default () => {
-  processGame(descriptionMessage, expression, game);
+  processGame(description, genQuestion, getExpectedAnswer);
 };

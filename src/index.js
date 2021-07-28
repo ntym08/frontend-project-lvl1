@@ -1,16 +1,16 @@
 // eslint-disable-next-line object-curly-newline
-import { getUserName, welcomeUser, greetUser, outputGameDescription, askQuestion, getUserAnswer, replyToWrongAnswer, replyToCorrectAnswer, outputCongrats } from './cli.js';
+import { getUserName, welcomeUser, greetUser, showGameDescription, askQuestion, getUserAnswer, replyToWrongAnswer, replyToCorrectAnswer, showCongrats } from './cli.js';
 
-const processGame = (description, expression, game) => {
+const processGame = (description, genQuestion, getExpectedAnswer) => {
   welcomeUser();
   const userName = getUserName();
   greetUser(userName);
-  outputGameDescription(description);
+  showGameDescription(description);
   for (let i = 1; i < 4; i += 1) {
-    const question = expression();
+    const question = genQuestion();
     askQuestion(question);
     const userAnswer = getUserAnswer();
-    const expectedAnswer = game(question);
+    const expectedAnswer = getExpectedAnswer(question);
     if (userAnswer === expectedAnswer) {
       replyToCorrectAnswer();
     } else {
@@ -18,9 +18,11 @@ const processGame = (description, expression, game) => {
       break;
     }
     if (i === 3) {
-      outputCongrats(userName);
+      showCongrats(userName);
     }
   }
 };
 
-export default processGame;
+const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+
+export { getRandomInt, processGame as default };

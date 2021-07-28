@@ -1,49 +1,52 @@
-import processGame from '../index.js';
+import processGame, { getRandomInt } from '../index.js';
 
-const minNum = 1;
-const maxNum = 50;
+const minFirstElement = 1;
+const maxFirstElement = 50;
+const minDiff = 1;
+const maxDiff = 10;
+const minElementsCount = 5;
+const maxElementsCount = 11;
+const minIndexMissingElement = 0;
 
-const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min)) + min;
-
-const getQuestion = () => {
-  const firstElement = getRandomNumber(minNum, maxNum);
-  const difference = getRandomNumber(1, 10);
-  const quantityOfElements = getRandomNumber(5, 11);
-  const indexHiddenElement = getRandomNumber(0, quantityOfElements);
-  let question = '';
-  for (let i = 0; i < quantityOfElements; i += 1) {
-    if (i !== indexHiddenElement) {
-      question = `${question} ${firstElement + i * difference}`;
+const genProgression = () => {
+  const firstElement = getRandomInt(minFirstElement, maxFirstElement);
+  const diff = getRandomInt(minDiff, maxDiff);
+  const elementsCount = getRandomInt(minElementsCount, maxElementsCount);
+  const indexMissingElement = getRandomInt(minIndexMissingElement, elementsCount);
+  let progression = '';
+  for (let i = 0; i < elementsCount; i += 1) {
+    if (i !== indexMissingElement) {
+      progression = `${progression} ${firstElement + i * diff}`;
     } else {
-      question = `${question} ..`;
+      progression = `${progression} ..`;
     }
   }
-  return `${question}`.trim();
+  return `${progression}`.trim();
 };
 
-const getHiddenElement = (string) => {
+const getMissingElement = (string) => {
   const array = string.split(' ');
-  const indexHiddenElement = array.indexOf('..');
-  let difference = 0;
+  const indexMissingElement = array.indexOf('..');
+  let diff = 0;
   let result = 0;
   for (let i = 0; i < array.length; i += 1) {
     if (array[i] !== '..' && array[i + 1] !== '..') {
-      difference = array[i + 1] - array[i];
+      diff = array[i + 1] - array[i];
       break;
     }
   }
-  if (indexHiddenElement !== 0) {
-    result = Number(array[indexHiddenElement - 1]) + difference;
+  if (indexMissingElement !== 0) {
+    result = Number(array[indexMissingElement - 1]) + diff;
   } else {
-    result = Number(array[indexHiddenElement + 1]) - difference;
+    result = Number(array[indexMissingElement + 1]) - diff;
   }
   return String(result);
 };
 
-const descriptionMessage = 'What number is missing in the progression?';
-const expression = getQuestion;
-const game = getHiddenElement;
+const description = 'What number is missing in the progression?';
+const genQuestion = genProgression;
+const getExpectedAnswer = getMissingElement;
 
 export default () => {
-  processGame(descriptionMessage, expression, game);
+  processGame(description, genQuestion, getExpectedAnswer);
 };

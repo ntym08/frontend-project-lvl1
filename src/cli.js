@@ -18,12 +18,12 @@ export const greetUser = (name) => {
   console.log(`Hello, ${name}!`);
 };
 
-export const outputGameDescription = (description) => {
+export const showGameDescription = (description) => {
   console.log(description);
 };
 
-export const askQuestion = (expression) => {
-  console.log(`Question: ${expression}`);
+export const askQuestion = (question) => {
+  console.log(`Question: ${question}`);
 };
 
 export const replyToWrongAnswer = (wrongAnswer, correctAnswer, name) => {
@@ -35,6 +35,6 @@ export const replyToCorrectAnswer = () => {
   console.log('Correct!');
 };
 
-export const outputCongrats = (name) => {
+export const showCongrats = (name) => {
   console.log(`Congratulations, ${name}!`);
 };
