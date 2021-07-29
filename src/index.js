@@ -2,14 +2,13 @@ import readlineSync from 'readline-sync';
 
 import greetUser from './cli.js';
 
-const processGame = (description, genQuestion, getExpectedAnswer) => {
+const processGame = (description, getQuestionAndAnswer) => {
   const userName = greetUser();
   console.log(description);
   for (let i = 1; i < 4; i += 1) {
-    const question = genQuestion();
+    const [question, expectedAnswer] = getQuestionAndAnswer();
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
-    const expectedAnswer = getExpectedAnswer(question);
     if (userAnswer === expectedAnswer) {
       console.log('Correct!');
     } else {

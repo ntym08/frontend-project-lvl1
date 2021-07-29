@@ -9,7 +9,7 @@ const isPrime = (number) => {
   if (number <= 1) {
     return false;
   }
-  for (let i = 2; i < Math.sqrt(number); i += 1) {
+  for (let i = 2; i <= Math.sqrt(number); i += 1) {
     if (number % i === 0) {
       return false;
     }
@@ -17,16 +17,13 @@ const isPrime = (number) => {
   return true;
 };
 
-const genInteger = () => {
-  const integer = getRandomInt(minNum, maxNum);
-  return `${integer}`;
+const genQuestionAndAnswer = () => {
+  const question = getRandomInt(minNum, maxNum);
+  const answer = isPrime(question) ? 'yes' : 'no';
+  const questionAndAnswer = [question, answer];
+  return questionAndAnswer;
 };
 
-const checkPrime = (number) => (isPrime(Number(number)) ? 'yes' : 'no');
-
-const genQuestion = genInteger;
-const getExpectedAnswer = checkPrime;
-
 export default () => {
-  processGame(description, genQuestion, getExpectedAnswer);
+  processGame(description, genQuestionAndAnswer);
 };

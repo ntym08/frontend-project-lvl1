@@ -6,19 +6,7 @@ const maxOperand = 50;
 const operators = ['+', '-', '*'];
 const description = 'What is the result of the expression?';
 
-const genExpression = () => {
-  const num1 = getRandomInt(minOperand, maxOperand);
-  const num2 = getRandomInt(minOperand, maxOperand);
-  const operator = operators[getRandomInt(0, operators.length)];
-  const expression = `${num1} ${operator} ${num2}`;
-  return expression;
-};
-
-const calcExpression = (string) => {
-  const array = string.split(' ');
-  const num1 = Number(array[0]);
-  const num2 = Number(array[2]);
-  const operator = array[1];
+const calcExpression = (num1, num2, operator) => {
   let result;
   switch (operator) {
     case '+':
@@ -33,12 +21,19 @@ const calcExpression = (string) => {
     default:
       break;
   }
-  return String(result);
+  return result;
 };
 
-const genQuestion = genExpression;
-const getExpectedAnswer = calcExpression;
+const genQuestionAndAnswer = () => {
+  const num1 = getRandomInt(minOperand, maxOperand);
+  const num2 = getRandomInt(minOperand, maxOperand);
+  const operator = operators[getRandomInt(0, operators.length)];
+  const question = `${num1} ${operator} ${num2}`;
+  const answer = String(calcExpression(num1, num2, operator));
+  const questionAndAnswer = [question, answer];
+  return questionAndAnswer;
+};
 
 export default () => {
-  processGame(description, genQuestion, getExpectedAnswer);
+  processGame(description, genQuestionAndAnswer);
 };

@@ -7,16 +7,13 @@ const description = "Answer 'yes' if the number is even, otherwise answer 'no'."
 
 const isEven = (number) => number % 2 === 0;
 
-const genInteger = () => {
-  const integer = getRandomInt(minNum, maxNum);
-  return `${integer}`;
+const genQuestionAndAnswer = () => {
+  const question = getRandomInt(minNum, maxNum);
+  const answer = isEven(question) ? 'yes' : 'no';
+  const questionAndAnswer = [question, answer];
+  return questionAndAnswer;
 };
 
-const checkEven = (number) => (isEven(Number(number)) ? 'yes' : 'no');
-
-const genQuestion = genInteger;
-const getExpectedAnswer = checkEven;
-
 export default () => {
-  processGame(description, genQuestion, getExpectedAnswer);
+  processGame(description, genQuestionAndAnswer);
 };

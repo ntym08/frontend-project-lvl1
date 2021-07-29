@@ -10,44 +10,28 @@ const maxElementsCount = 11;
 const minIndexMissingElement = 0;
 const description = 'What number is missing in the progression?';
 
-const genProgression = () => {
+const makeProgression = () => {
   const firstElement = getRandomInt(minFirstElement, maxFirstElement);
   const diff = getRandomInt(minDiff, maxDiff);
   const elementsCount = getRandomInt(minElementsCount, maxElementsCount);
-  const indexMissingElement = getRandomInt(minIndexMissingElement, elementsCount);
-  let progression = '';
+  const progression = [];
   for (let i = 0; i < elementsCount; i += 1) {
-    if (i !== indexMissingElement) {
-      progression = `${progression} ${firstElement + i * diff}`;
-    } else {
-      progression = `${progression} ..`;
-    }
+    progression.push(firstElement + i * diff);
   }
-  return `${progression}`.trim();
+  return progression;
 };
 
-const getMissingElement = (string) => {
-  const array = string.split(' ');
-  const indexMissingElement = array.indexOf('..');
-  let diff = 0;
-  let result = 0;
-  for (let i = 0; i < array.length; i += 1) {
-    if (array[i] !== '..' && array[i + 1] !== '..') {
-      diff = array[i + 1] - array[i];
-      break;
-    }
-  }
-  if (indexMissingElement !== 0) {
-    result = Number(array[indexMissingElement - 1]) + diff;
-  } else {
-    result = Number(array[indexMissingElement + 1]) - diff;
-  }
-  return String(result);
-};
+const stringifyProgression = (array) => array.join(' ');
 
-const genQuestion = genProgression;
-const getExpectedAnswer = getMissingElement;
+const genQuestionAndAnswer = () => {
+  const progression = makeProgression();
+  const indexMissingElement = getRandomInt(minIndexMissingElement, progression.length);
+  const answer = String(progression.splice(indexMissingElement, 1, '..'));
+  const question = stringifyProgression(progression);
+  const questionAndAnswer = [question, answer];
+  return questionAndAnswer;
+};
 
 export default () => {
-  processGame(description, genQuestion, getExpectedAnswer);
+  processGame(description, genQuestionAndAnswer);
 };
