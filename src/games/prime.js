@@ -1,7 +1,9 @@
-import processGame, { getRandomInt } from '../index.js';
+import processGame from '../index.js';
+import getRandomInt from '../random-integer.js';
 
 const minNum = 1;
 const maxNum = 1000;
+const description = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
 const isPrime = (number) => {
   if (number <= 1) {
@@ -22,7 +24,6 @@ const genInteger = () => {
 
 const checkPrime = (number) => (isPrime(Number(number)) ? 'yes' : 'no');
 
-const description = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 const genQuestion = genInteger;
 const getExpectedAnswer = checkPrime;
 

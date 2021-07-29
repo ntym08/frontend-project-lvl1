@@ -1,7 +1,9 @@
-import processGame, { getRandomInt } from '../index.js';
+import processGame from '../index.js';
+import getRandomInt from '../random-integer.js';
 
 const minNum = 1;
 const maxNum = 100;
+const description = 'Find the greatest common divisor of given numbers.';
 
 const getGCD = (a, b) => {
   if (b > a) return getGCD(b, a);
@@ -24,7 +26,6 @@ const getGreatestCommonDivisor = (string) => {
   return String(result);
 };
 
-const description = 'Find the greatest common divisor of given numbers.';
 const genQuestion = genPairOfInteger;
 const getExpectedAnswer = getGreatestCommonDivisor;
 

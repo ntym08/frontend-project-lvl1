@@ -1,4 +1,5 @@
-import processGame, { getRandomInt } from '../index.js';
+import processGame from '../index.js';
+import getRandomInt from '../random-integer.js';
 
 const minFirstElement = 1;
 const maxFirstElement = 50;
@@ -7,6 +8,7 @@ const maxDiff = 10;
 const minElementsCount = 5;
 const maxElementsCount = 11;
 const minIndexMissingElement = 0;
+const description = 'What number is missing in the progression?';
 
 const genProgression = () => {
   const firstElement = getRandomInt(minFirstElement, maxFirstElement);
@@ -43,7 +45,6 @@ const getMissingElement = (string) => {
   return String(result);
 };
 
-const description = 'What number is missing in the progression?';
 const genQuestion = genProgression;
 const getExpectedAnswer = getMissingElement;
 

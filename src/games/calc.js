@@ -1,8 +1,10 @@
-import processGame, { getRandomInt } from '../index.js';
+import processGame from '../index.js';
+import getRandomInt from '../random-integer.js';
 
 const minOperand = 1;
 const maxOperand = 50;
 const operators = ['+', '-', '*'];
+const description = 'What is the result of the expression?';
 
 const genExpression = () => {
   const num1 = getRandomInt(minOperand, maxOperand);
@@ -34,7 +36,6 @@ const calcExpression = (string) => {
   return String(result);
 };
 
-const description = 'What is the result of the expression?';
 const genQuestion = genExpression;
 const getExpectedAnswer = calcExpression;
 

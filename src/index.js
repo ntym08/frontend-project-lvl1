@@ -23,6 +23,4 @@ const processGame = (description, genQuestion, getExpectedAnswer) => {
   }
 };
 
-const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
-
-export { getRandomInt, processGame as default };
+export default processGame;
