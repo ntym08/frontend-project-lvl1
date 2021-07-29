@@ -1,5 +1,5 @@
 import processGame from '../index.js';
-import getRandomInt from '../random-integer.js';
+import generateRandomNumber from '../random-number.js';
 
 const minNum = 1;
 const maxNum = 1000;
@@ -18,7 +18,7 @@ const isPrime = (number) => {
 };
 
 const genQuestionAndAnswer = () => {
-  const question = getRandomInt(minNum, maxNum);
+  const question = generateRandomNumber(minNum, maxNum);
   const answer = isPrime(question) ? 'yes' : 'no';
   const questionAndAnswer = [question, answer];
   return questionAndAnswer;

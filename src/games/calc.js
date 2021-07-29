@@ -1,5 +1,5 @@
 import processGame from '../index.js';
-import getRandomInt from '../random-integer.js';
+import generateRandomNumber from '../random-number.js';
 
 const minOperand = 1;
 const maxOperand = 50;
@@ -25,9 +25,9 @@ const calcExpression = (num1, num2, operator) => {
 };
 
 const genQuestionAndAnswer = () => {
-  const num1 = getRandomInt(minOperand, maxOperand);
-  const num2 = getRandomInt(minOperand, maxOperand);
-  const operator = operators[getRandomInt(0, operators.length)];
+  const num1 = generateRandomNumber(minOperand, maxOperand);
+  const num2 = generateRandomNumber(minOperand, maxOperand);
+  const operator = operators[generateRandomNumber(0, operators.length)];
   const question = `${num1} ${operator} ${num2}`;
   const answer = String(calcExpression(num1, num2, operator));
   const questionAndAnswer = [question, answer];

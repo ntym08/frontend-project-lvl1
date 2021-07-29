@@ -1,5 +1,5 @@
 import processGame from '../index.js';
-import getRandomInt from '../random-integer.js';
+import generateRandomNumber from '../random-number.js';
 
 const minNum = 1;
 const maxNum = 100;
@@ -12,8 +12,8 @@ const getGCD = (a, b) => {
 };
 
 const genQuestionAndAnswer = () => {
-  const num1 = getRandomInt(minNum, maxNum);
-  const num2 = getRandomInt(minNum, maxNum);
+  const num1 = generateRandomNumber(minNum, maxNum);
+  const num2 = generateRandomNumber(minNum, maxNum);
   const question = `${num1} ${num2}`;
   const answer = String(getGCD(num1, num2));
   const questionAndAnswer = [question, answer];
