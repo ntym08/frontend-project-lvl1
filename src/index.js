@@ -1,24 +1,24 @@
-// eslint-disable-next-line object-curly-newline
-import { getUserName, welcomeUser, greetUser, showGameDescription, askQuestion, getUserAnswer, replyToWrongAnswer, replyToCorrectAnswer, showCongrats } from './cli.js';
+import readlineSync from 'readline-sync';
+
+import greetUser from './cli.js';
 
 const processGame = (description, genQuestion, getExpectedAnswer) => {
-  welcomeUser();
-  const userName = getUserName();
-  greetUser(userName);
-  showGameDescription(description);
+  const userName = greetUser();
+  console.log(description);
   for (let i = 1; i < 4; i += 1) {
     const question = genQuestion();
-    askQuestion(question);
-    const userAnswer = getUserAnswer();
+    console.log(`Question: ${question}`);
+    const userAnswer = readlineSync.question('Your answer: ');
     const expectedAnswer = getExpectedAnswer(question);
     if (userAnswer === expectedAnswer) {
-      replyToCorrectAnswer();
+      console.log('Correct!');
     } else {
-      replyToWrongAnswer(userAnswer, expectedAnswer, userName);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${expectedAnswer}'.`);
+      console.log(`Let's try again, ${userName}!`);
       break;
     }
     if (i === 3) {
-      showCongrats(userName);
+      console.log(`Congratulations, ${userName}!`);
     }
   }
 };
