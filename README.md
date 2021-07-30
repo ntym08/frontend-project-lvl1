@@ -8,13 +8,13 @@
 
 ### Usage example:
 
-- brain-even
-  [![asciicast](https://asciinema.org/a/427385.svg)](https://asciinema.org/a/427385)
-- brain-calc
-  [![asciicast](https://asciinema.org/a/427389.svg)](https://asciinema.org/a/427389)
-- brain-gcd
-  [![asciicast](https://asciinema.org/a/427383.svg)](https://asciinema.org/a/427383)
-- brain-progression
-  [![asciicast](https://asciinema.org/a/427528.svg)](https://asciinema.org/a/427528)
-- brain-prime
-  [![asciicast](https://asciinema.org/a/427547.svg)](https://asciinema.org/a/427547)
+#### brain-even
+[![asciicast](https://asciinema.org/a/427385.svg)](https://asciinema.org/a/427385)
+#### brain-calc
+[![asciicast](https://asciinema.org/a/427389.svg)](https://asciinema.org/a/427389)
+#### brain-gcd
+[![asciicast](https://asciinema.org/a/427383.svg)](https://asciinema.org/a/427383)
+#### brain-progression
+[![asciicast](https://asciinema.org/a/427528.svg)](https://asciinema.org/a/427528)
+#### brain-prime
+[![asciicast](https://asciinema.org/a/427547.svg)](https://asciinema.org/a/427547)
