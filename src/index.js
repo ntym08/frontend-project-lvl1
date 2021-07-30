@@ -11,13 +11,15 @@ const processGame = (description, getQuestionAndAnswer) => {
     const [question, expectedAnswer] = getQuestionAndAnswer();
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
-    if (userAnswer === expectedAnswer) {
-      console.log('Correct!');
-    } else {
+
+    if (userAnswer !== expectedAnswer) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${expectedAnswer}'.`);
       console.log(`Let's try again, ${userName}!`);
       break;
     }
+
+    console.log('Correct!');
+
     if (i === roundCount - 1) {
       console.log(`Congratulations, ${userName}!`);
     }
