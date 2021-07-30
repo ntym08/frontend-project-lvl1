@@ -21,12 +21,14 @@ const makeProgression = () => {
   return progression;
 };
 
+const hideElementInProgression = (array, index) => array.splice(index, 1, '..');
+
 const stringifyProgression = (array) => array.join(' ');
 
 const genQuestionAndAnswer = () => {
   const progression = makeProgression();
   const indexMissingElement = generateRandomNumber(minIndexMissingElement, progression.length);
-  const answer = String(progression.splice(indexMissingElement, 1, '..'));
+  const answer = String(hideElementInProgression(progression, indexMissingElement));
   const question = stringifyProgression(progression);
   const questionAndAnswer = [question, answer];
   return questionAndAnswer;
