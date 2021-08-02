@@ -21,9 +21,9 @@ const makeProgression = () => {
   return progression;
 };
 
-const hideElementInProgression = (array, index) => array.splice(index, 1, '..');
+const hideElementInProgression = (progression, index) => progression.splice(index, 1, '..');
 
-const stringifyProgression = (array) => array.join(' ');
+const stringifyProgression = (progression) => progression.join(' ');
 
 const genQuestionAndAnswer = () => {
   const progression = makeProgression();
