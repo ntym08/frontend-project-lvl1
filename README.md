@@ -2,17 +2,18 @@
 
 ## Brain Games
 ### This is a set of 5 console mini-games to pump up your brain:
-- brain-even - determination of an even number.
-- brain-calc - calculation of an arithmetic expressions. 
-- brain-gcd - determination of the greatest common divisor.
-- brain-prime - determination of a prime number.
+- brain-even - determination of an even number
+- brain-calc - calculation of an arithmetic expressions
+- brain-gcd - determination of the greatest common divisor
+- brain-prime - determination of a prime number
 - brain-progression - determination of a missing term in an arithmetic progression
 
 ### Install
-Clone this repo using:
+
 ```$ git clone git@github.com:ntym08/frontend-project-lvl1.git
 $ make install
 $ npm link```
+
 [![asciicast](https://asciinema.org/a/427356.svg)](https://asciinema.org/a/427356)
 
 ### Usage example:
