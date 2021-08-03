@@ -1,9 +1,18 @@
-### Hexlet tests and linter status:
-
 [![Actions Status](https://github.com/ntym08/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/ntym08/frontend-project-lvl1/actions) [![Maintainability](https://api.codeclimate.com/v1/badges/96c096e724616aac8dd7/maintainability)](https://codeclimate.com/github/ntym08/frontend-project-lvl1/maintainability) [![linter-check](https://github.com/ntym08/frontend-project-lvl1/actions/workflows/linter-check.yml/badge.svg)](https://github.com/ntym08/frontend-project-lvl1/actions/workflows/linter-check.yml)
 
-### Install:
+## Brain Games
+### This is a set of 5 console mini-games to pump up your brain:
+- brain-even - determination of an even number.
+- brain-calc - calculation of an arithmetic expressions. 
+- brain-gcd - determination of the greatest common divisor.
+- brain-prime - determination of a prime number.
+- brain-progression - determination of a missing term in an arithmetic progression
 
+### Install
+Clone this repo using:
+```$ git clone git@github.com:ntym08/frontend-project-lvl1.git
+$ make install
+$ npm link```
 [![asciicast](https://asciinema.org/a/427356.svg)](https://asciinema.org/a/427356)
 
 ### Usage example:
