@@ -1,4 +1,4 @@
-import processGame from '../index.js';
+import playGame from '../index.js';
 import generateRandomNumber from '../random-number.js';
 
 const minOperand = 1;
@@ -35,5 +35,5 @@ const genQuestionAndAnswer = () => {
 };
 
 export default () => {
-  processGame(description, genQuestionAndAnswer);
+  playGame(description, genQuestionAndAnswer);
 };
