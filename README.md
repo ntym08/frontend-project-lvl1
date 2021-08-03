@@ -10,11 +10,14 @@
 
 ### Install
 
-```$ git clone git@github.com:ntym08/frontend-project-lvl1.git
+```
+$ git clone git@github.com:ntym08/frontend-project-lvl1.git
+$ cd frontend-project-lvl1
 $ make install
-$ npm link```
+$ npm link
+```
 
-[![asciicast](https://asciinema.org/a/427356.svg)](https://asciinema.org/a/427356)
+[![asciicast](https://asciinema.org/a/428667.svg)](https://asciinema.org/a/428667)
 
 ### Usage example:
 
