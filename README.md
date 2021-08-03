@@ -1,25 +1,26 @@
 [![Actions Status](https://github.com/ntym08/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/ntym08/frontend-project-lvl1/actions) [![Maintainability](https://api.codeclimate.com/v1/badges/96c096e724616aac8dd7/maintainability)](https://codeclimate.com/github/ntym08/frontend-project-lvl1/maintainability) [![linter-check](https://github.com/ntym08/frontend-project-lvl1/actions/workflows/linter-check.yml/badge.svg)](https://github.com/ntym08/frontend-project-lvl1/actions/workflows/linter-check.yml)
 
 ## Brain Games
-### This is a set of 5 console mini-games to pump up your brain:
+### This is a set of 5 console mini-games to level up your brain:
 - brain-even - determination of an even number
 - brain-calc - calculation of an arithmetic expressions
 - brain-gcd - determination of the greatest common divisor
 - brain-prime - determination of a prime number
 - brain-progression - determination of a missing term in an arithmetic progression
 
-### Install
+### Installation and launch
 
 ```
 $ git clone git@github.com:ntym08/frontend-project-lvl1.git
 $ cd frontend-project-lvl1
 $ make install
 $ npm link
+$ brain-games
 ```
 
 [![asciicast](https://asciinema.org/a/428667.svg)](https://asciinema.org/a/428667)
 
-### Usage example:
+### Demo of the games:
 
 #### brain-even
 [![asciicast](https://asciinema.org/a/427385.svg)](https://asciinema.org/a/427385)
